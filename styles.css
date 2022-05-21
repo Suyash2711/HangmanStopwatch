@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: 0;
+}
+.stopwatch{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    font-size: 2.5rem;
+}
+header{
+    justify-content: center;
+    align-items: center;
+    size: 2rem;
+}
+.wrapper{
+    width: auto;
+    margin: 30px auto;
+    background-color:blanchedalmond;
+    text-align: center;
+}
+#tens, #seconds{
+    font-size: 200%;
+}
+.startbutton{
+    font-size: 150%;
+}
+.quest{
+    width: 100%;
+}
