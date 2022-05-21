@@ -3,30 +3,99 @@
     padding: 0;
     box-sizing: 0;
 }
+body{
+    background-color:goldenrod;
+}
 .stopwatch{
     text-align: center;
+    margin-top: 50px;
 }
 h1{
     text-align: center;
     font-size: 2.5rem;
+    cursor: pointer ;
+}
+.startbutton{
+    position:relative;
+    border-color: black;
+    display: inline-block;
+    color:white;
+    cursor: pointer;
+    background-color: rgb(190, 104, 34);
+    margin-top: 50px;
+    border-radius: 8px;
+    width:150px;
+    height: 50px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    overflow: hidden;
+}
+.startbutton:after{
+    display: block;
+    transition: all 0.8s;
+    opacity: 0;
+}
+.startbutton:active:after{
+    padding:0;
+    margin:0;
+    opacity:0;
+    transition:0s;
 }
 header{
     justify-content: center;
     align-items: center;
-    size: 2rem;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
 }
 .wrapper{
     width: auto;
     margin: 30px auto;
-    background-color:blanchedalmond;
+    /* background-color:blanchedalmond; */
     text-align: center;
 }
-#tens, #seconds{
-    font-size: 200%;
+#tens, #seconds, #colon{
+    font-size: 300%;
 }
+/* #colon{
+    font-size: 40px;
+} */
 .startbutton{
     font-size: 150%;
+    position: relative;
+}
+.question{
+    width: 70%;
+    /* top:; */
+    /* align-content: center; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.q{
+    text-align: center;
+    margin-top: 40px;
+    text-decoration: underline;
+    font-size: 25px;
 }
 .quest{
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.answer{
+    margin-top: 50px;
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+    text-decoration:solid;
+}
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
+    text-align: center;
+    font-size: 150%;
 }
