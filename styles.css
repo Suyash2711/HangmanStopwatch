@@ -6,14 +6,24 @@
 body{
     background-color:goldenrod;
 }
+#category{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 40px;
+    padding: 15px;
+    border: solid 3px black;
+    width:fit-content;
+    display: block;
+    border-radius: 15px;
+}
 .stopwatch{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 h1{
     text-align: center;
     font-size: 2.5rem;
-    cursor: pointer ;
+    cursor: pointer;
 }
 .startbutton{
     position:relative;
@@ -22,7 +32,8 @@ h1{
     color:white;
     cursor: pointer;
     background-color: rgb(190, 104, 34);
-    margin-top: 50px;
+    margin-top: 25px;
+    margin-bottom: 5px;
     border-radius: 8px;
     width:150px;
     height: 50px;
@@ -50,7 +61,7 @@ header{
 }
 .wrapper{
     width: auto;
-    margin: 30px auto;
+    margin: 10px auto;
     /* background-color:blanchedalmond; */
     text-align: center;
 }
@@ -63,6 +74,11 @@ header{
 .startbutton{
     font-size: 150%;
     position: relative;
+}
+.lives{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 .question{
     width: 70%;
@@ -85,7 +101,7 @@ header{
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 .answer{
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 20px;
     align-items: center;
     text-align: center;
