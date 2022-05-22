@@ -6,15 +6,21 @@
 body{
     background-color:goldenrod;
 }
+.q_box{
+    margin:0 auto;
+    
+}
 #category{
     text-align: center;
     font-size: 30px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     padding: 15px;
     border: solid 3px black;
     width:fit-content;
     display: block;
     border-radius: 15px;
+    margin: 0 auto;
+    background-image: linear-gradient(100deg, #faebd7, #d4b320)
 }
 .stopwatch{
     text-align: center;
@@ -68,9 +74,7 @@ header{
 #tens, #seconds, #colon{
     font-size: 300%;
 }
-/* #colon{
-    font-size: 40px;
-} */
+
 .startbutton{
     font-size: 150%;
     position: relative;
