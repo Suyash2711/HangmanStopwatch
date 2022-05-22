@@ -9,10 +9,10 @@ var interval;
 buttonStart.onclick = function(){
     clearInterval(interval);
     interval = setInterval(startTimer, 1000);
+    questionShow();
 }
 
 function startTimer(){
-    
     tens++;
 
     if(tens <= 9){
@@ -32,7 +32,6 @@ function startTimer(){
         appendSeconds.innerHTML = seconds;
     }
     buttonStart.disabled = true;
-    // show();
 }
 
 // ---------------------------STOPWATCH END----------------------------------------
@@ -40,13 +39,14 @@ function startTimer(){
 
 
 
+function questionShow() {
+document.getElementById('question_').style.display='block';
+document.querySelector('.answer').style.display='block';
 
-var questions = ["What was the official name of the first World Cup?", " In first class Indian matches, the maximum distance (yards) allowed from pitch to the boundary/ line is ?", "Who was ‘the Man of the match’ in the 1983 World Cup final?", "The 1975 World Cup, the first of its kind was played at ?", "Who is the first batsman to cross 10000 runs in Tests ?"];
+var questions = ["What was the official name of the first World Cup?", " In first class Indian matches, the maximum distance (yards) allowed from pitch to the boundary line is ?", "Who was ‘the Man of the match’ in the 1983 World Cup final?", "The 1975 World Cup, the first of its kind was played at ?", "Who is the first batsman to cross 10000 runs in Tests ?"];
 var answers = ["PRUDENTIAL", "75", "KAPIL DEV", "LORDS", "SUNIL GAVASKAR"];
 
 var random = Math.floor(Math.random()*questions.length);
-
-// var key = 
 
 var selectedQ = questions[random];
 var selectedA = answers[random];
@@ -60,24 +60,19 @@ var correct= [];
 
 var wrong= [];
 
-// document.getElementById("question").style.display = "none";
-document.getElementById("question").innerHTML = selectedQ;
+document.getElementById("question_").innerHTML = selectedQ;
 document.getElementById("category").innerHTML = category;
 var ans = document.querySelector(".answer");
 var correct_ans = [];
-
-
-// function show(){
-//     // var element = document.getElementsByClassName(".startbutton");
-//     // element.classList.add("show");
-
     
-// }
-var space = [];
+
+var space = []; //correct answer stored here
+
+
 for(var i=0; i<selectedA.length; i++){
     correct_ans.push(selectedA[i]);
 }
-console.log(correct_ans);
+// console.log(correct_ans);
 // ans.innerHTML = correct_ans;
 
 for(var i=0; i<selectedA.length; i++){
@@ -89,7 +84,7 @@ for(var i=0; i<selectedA.length; i++){
     }
     space.join(" ");
 }
-console.log(space);
+
 ans.innerHTML = space.join(" ");
 
 for(var i=0; i<selectedA.length; i++){  
@@ -101,5 +96,6 @@ for(var i=0; i<selectedA.length; i++){
     }
 }
 console.log(correct); //answer in correct
+}
 
 

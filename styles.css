@@ -112,7 +112,16 @@ question{
     align-items: center;
     text-align: center;
     text-decoration:solid;
-    /* display: none; */
+    display: none;
+    margin:auto;
+    padding: 10px;
+}
+#question_{
+    display: none;
+}
+#ans{
+    font-size: 40px;
+    text-align: center;
 }
 .footer{
     position: fixed;
