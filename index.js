@@ -33,25 +33,45 @@ function startTimer(){
     buttonStart.disabled = true;
 }
 
+// ---------------------------STOPWATCH END----------------------------------------
 
 
 
 
 
+var questions = ["What was the official name of the first World Cup?", " In first class Indian matches, the maximum distance (yards) allowed from pitch to the boundary/ line is ?", "Who was ‘the Man of the match’ in the 1983 World Cup final?", "The 1975 World Cup, the first of its kind was played at ?", "Who is the first batsman to cross 10000 runs in Tests ?"];
+var answers = ["PRUDENTIAL", "75", "KAPIL DEV", "LORDS", "SUNIL GAVASKAR"];
 
-// --------------------------------------------------------------------------------------------------------------
+var random = Math.floor(Math.random()*questions.length);
 
-// var questions = ["What was the official name of the first World Cup?", " In first class Indian matches, the maximum distance (yards) allowed from pitch to the boundary/ line is ?", "Who was ‘the Man of the match’ in the 1983 World Cup final?", "The 1975 World Cup, the first of its kind was played at ?", "Who is the first batsman to cross 10000 runs in Tests ?"];
-// var answers = ["PRUDENTIAL", "75", "KAPIL DEV", "LORDS", "SUNIL GAVASKAR"];
+var selectedQ = questions[random];
+var selectedA = answers[random];
 
-// var random = Math.floor(Math.random()*questions.length);
+var category = "Cricket";
 
-// var selectedQ = questions[random];
-// var selectedA = answers[random];
+var lives=5;
+var totalMistakes = 5;
 
-// var category = "Cricket";
+var space= [];
 
-// var lives=5, live=0, win=0;
-// var totalMistakes = 5;
+var wrong= [];
+
+// document.getElementById("question").style.display = "none";
+document.getElementById("question").innerHTML = selectedQ;
+document.getElementById("category").innerHTML = category;
+
+function show(){
+    var element = document.getElementsByClassName(".startbutton");
+    element.classList.add("show");
+}
+
+for(var i=0; i<selectedA.length; i++){  
+    if(answers[random][i] == " "){
+        space.push("/");
+    }
+    else{
+        space.push("_");
+    }
+}
 
 
