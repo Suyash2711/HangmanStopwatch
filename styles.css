@@ -112,6 +112,7 @@ question{
     align-items: center;
     text-align: center;
     text-decoration:solid;
+    /* display: none; */
 }
 .footer{
     position: fixed;
