@@ -4,6 +4,22 @@ var appendTens = document.getElementById("tens");
 var appendSeconds = document.getElementById("seconds");
 var buttonStart = document.querySelector(".startbutton");
 
+
+var questions = ["What was the official name of the first World Cup?", " In first class Indian matches, the maximum distance (yards) allowed from pitch to the boundary line is ?", "Who was ‘the Man of the match’ in the 1983 World Cup final?", "The 1975 World Cup, the first of its kind was played at ?", "Who is the first batsman to cross 10000 runs in Tests ?"];
+var answers = ["PRUDENTIAL", "75", "KAPIL DEV", "LORDS", "SUNIL GAVASKAR"];
+
+var ans = document.querySelector(".answer");
+var correct_ans = [];
+var space = []; //dashes stored here
+var lives=5;
+var totalMistakes = 5;
+var correct= [];
+var category = "Cricket";
+
+var wrong= [];
+var leftLives = document.getElementById("livesCount");
+
+
 var interval;
 
 buttonStart.onclick = function(){
@@ -37,36 +53,18 @@ function startTimer(){
 // ---------------------------STOPWATCH END----------------------------------------
 
 
-
-
 function questionShow() {
 document.getElementById('question_').style.display='block';
 document.querySelector('.answer').style.display='block';
 
-var questions = ["What was the official name of the first World Cup?", " In first class Indian matches, the maximum distance (yards) allowed from pitch to the boundary line is ?", "Who was ‘the Man of the match’ in the 1983 World Cup final?", "The 1975 World Cup, the first of its kind was played at ?", "Who is the first batsman to cross 10000 runs in Tests ?"];
-var answers = ["PRUDENTIAL", "75", "KAPIL DEV", "LORDS", "SUNIL GAVASKAR"];
 
 var random = Math.floor(Math.random()*questions.length);
 
 var selectedQ = questions[random];
 var selectedA = answers[random];
 
-var category = "Cricket";
-
-var lives=5;
-var totalMistakes = 5;
-
-var correct= [];
-
-var wrong= [];
-
 document.getElementById("question_").innerHTML = selectedQ;
 document.getElementById("category").innerHTML = category;
-var ans = document.querySelector(".answer");
-var correct_ans = [];
-    
-
-var space = []; //correct answer stored here
 
 
 for(var i=0; i<selectedA.length; i++){
@@ -96,6 +94,26 @@ for(var i=0; i<selectedA.length; i++){
     }
 }
 console.log(correct); //answer in correct
+keypress();
+}
+// -----------------------------questionShow-------------------------------------
+
+function keypress(){
+    document.addEventListener("keypress", checkKey);
 }
 
+function checkKey(e){
+    var pressedKey = e.key.toUpperCase();
+
+    for(var i=0; i<correct.length; i++){
+        if(correct[i] === pressedKey){
+            space[i] = pressedKey;
+            ans.innerHTML = space.join(" ");
+        }
+        else{
+            lives--;
+            leftLives.innerHTML = lives;
+        }
+    }
+}
 
